@@ -1,0 +1,47 @@
+/* components/ContactRef.module.css */
+
+.dividerContainer {
+  position: relative;
+}
+
+.dividerContainer::before,
+.dividerContainer::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #d1d5db; /* Tailwind gray-300 */
+}
+
+.dividerContainer::before {
+  top: 0;
+  background-image: linear-gradient(to right, #d1d5db 50%, transparent 50%),
+                    linear-gradient(to right, #d1d5db 50%, transparent 50%);
+  background-size: 1px 100%, 100% 1px;
+  background-position: center top, center top;
+}
+
+.dividerContainer::after {
+  bottom: 0;
+  background-image: linear-gradient(to right, #d1d5db 50%, transparent 50%),
+                    linear-gradient(to right, #d1d5db 50%, transparent 50%);
+  background-size: 1px 100%, 100% 1px;
+  background-position: center bottom, center bottom;
+}
+
+/* A more elegant way using a single pseudo-element and a background image for the plus */
+/* This is a more complex but potentially better solution */
+
+.dividerContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #d1d5db;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><line x1="5" y1="0" x2="5" y2="10" stroke="%23d1d5db" stroke-width="1"/><line x1="0" y1="5" x2="10" y2="5" stroke="%23d1d5db" stroke-width="1"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center center;
+} 

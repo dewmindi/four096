@@ -2,12 +2,13 @@ import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import './globals.css'
+import CustomCursor from '@/components/CustomCursor'
 
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'Four096',
+  description: 'Four096',
+  generator: 'Four096',
 }
 
 export default function RootLayout({
@@ -26,7 +27,10 @@ html {
 }
         `}</style>
       </head>
-      <body>{children}</body>
+      <body>
+        <CustomCursor />
+        {children}
+        </body>
     </html>
   )
 }

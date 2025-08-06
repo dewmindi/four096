@@ -94,3 +94,25 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.line {
+  transform: translateY(100%);
+  will-change: transform;
+}
+
+.cursor-none {
+  cursor: none;
+}
+
+/* Extra style for the custom cursor when hovering interactive elements */
+.cursor--hover {
+  transform: translate3d(0, 0, 0) scale(2); /* scale up 2x (tweak as needed) */
+  transition: transform 180ms cubic-bezier(.2,.9,.25,1);
+  /* optional visual change */
+  background-color: white; 
+}
+
+/* Ensure the canvas/other stuff doesn't trap pointer events (if you use vanta or others) */
+.pointer-events-none {
+  pointer-events: none;
+}
