@@ -123,15 +123,15 @@ const Homepage = () => {
           <div
             className="text-center mb-16"
           >
-             <div className="text-cyan-500 z-20 flex items-start justify-start text-4xl    font-thin ">
-        +
-      </div>
+            <div className="text-cyan-500 z-20 flex items-start justify-start text-4xl    font-thin ">
+              +
+            </div>
             <h2 className="text-9xl text-black mb-4 font-dm-sans">
               About Us
             </h2>
-                         <div className="text-cyan-500 z-20 flex items-end justify-end text-4xl    font-thin ">
-        +
-      </div>
+            <div className="text-cyan-500 z-20 flex items-end justify-end text-4xl    font-thin ">
+              +
+            </div>
           </div>
         </section>
       </Copy>
@@ -164,36 +164,36 @@ const Homepage = () => {
       <section className="bg-[#eeede8] pb-16">
         <div className="flex sm:grid-cols-1 md:grid-cols-3 justify-between gap-6 p-10">
           <div className="flex flex-col justify-between bg-[#222222] rounded-md p-5">
-              <div className="flex flex-col gap-4">
-                <h1 className="text-4xl text-white font-dm-sans">20+ Years Experience</h1>
-                <h1 className="text-2xl text-gray-400 font-thin">Two decades of proven expertise in software development and business consulting</h1>
-              </div>
-            
+            <div className="flex flex-col gap-4">
+              <h1 className="text-4xl text-white font-dm-sans">20+ Years Experience</h1>
+              <h1 className="text-2xl text-gray-400 font-thin">Two decades of proven expertise in software development and business consulting</h1>
+            </div>
+
             <div className="flex justify-end mt-10"><button><ArrowUpRight color="white" /></button></div>
           </div>
           <div className="flex flex-col justify-between bg-[#222222] rounded-md p-5">
             <div className="flex flex-col gap-4">
-              
-                <h1 className="text-4xl text-white font-dm-sans">IFS ERP Specialists</h1>
-                <h1 className="text-2xl text-gray-400 font-thin">Extensive experience in IFS ERP solutions, modifications, and platform integrations</h1>
-             
+
+              <h1 className="text-4xl text-white font-dm-sans">IFS ERP Specialists</h1>
+              <h1 className="text-2xl text-gray-400 font-thin">Extensive experience in IFS ERP solutions, modifications, and platform integrations</h1>
+
 
             </div>
-             
+
             <div className="flex justify-end mt-10"><button><ArrowUpRight color="white" /></button></div>
           </div>
           <div className="flex flex-col justify-between bg-[#222222] rounded-md p-5">
-              <div className="flex flex-col gap-4">
-                <h1 className="text-4xl text-white font-dm-sans">End-to-End Solutions</h1>
-                <h1 className="text-2xl text-gray-400 font-thin">Complete software development lifecycle from inception to delivery and beyond</h1>
-              </div>
-            
+            <div className="flex flex-col gap-4">
+              <h1 className="text-4xl text-white font-dm-sans">End-to-End Solutions</h1>
+              <h1 className="text-2xl text-gray-400 font-thin">Complete software development lifecycle from inception to delivery and beyond</h1>
+            </div>
+
             <div className="flex justify-end mt-10"><button><ArrowUpRight color="white" /></button></div>
           </div>
 
         </div>
 
-                <div className="flex justify-center ">
+        <div className="flex justify-center ">
           <button className="mt-10 align-middle p-6 border border-cyan-500 rounded-full flex hover:bg-cyan-500 hover:scale-110">
             <span className="">Learn More</span>
             <span className=""><ArrowUpRight /></span>
@@ -259,7 +259,7 @@ const Homepage = () => {
         <div
           className=" bg-[#eeede8] text-6xl px-20 pt-40 pb-40 text-black font-dm-sans flex flex-col">
           <p className="text-end">
-            Discover our comprehensive range  of 
+            Discover our comprehensive range  of
           </p>
           <p className="text">
             professional services designed to elevate your business
@@ -269,7 +269,7 @@ const Homepage = () => {
       <section className=" bg-[#eeede8] text-black px-2 pb-10">
         <Copy delay={0.1}>
           <div className="flex flex-row justify-between border-b-2 border-black border-t-2 py-10 font-dm-sans">
-            <div className="text-9xl mr-44 animate-pulse"><Asterisk size={120}/></div>
+            <div className="text-9xl mr-44 animate-pulse"><Asterisk size={120} /></div>
             <div className="text-2xl mr-20">ERP Consultation</div>
             <div className="text-2xl">We provide consulting, development and integration services
               on top of IFS Cloud with professionals with extensive experience
@@ -279,7 +279,7 @@ const Homepage = () => {
         </Copy>
         <Copy delay={0.1}>
           <div className="flex flex-row justify-between border-b-2 border-black  py-10 font-dm-sans">
-            <div className="text-9xl mr-44 animate-pulse"><Asterisk size={120}/></div>
+            <div className="text-9xl mr-44 animate-pulse"><Asterisk size={120} /></div>
             <div className="text-2xl mr-20">Software Development</div>
             <div className="text-2xl">Custom Software development services specialized with
               Java / React / Node.Js backend with managed deployments on AWS Cloud.

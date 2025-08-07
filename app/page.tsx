@@ -43,7 +43,6 @@ export default function Four096Website() {
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
     { id: "services", label: "Services" },
-    { id: "contact", label: "Projects" },
   ]
 
   // Handle navigation clicks
@@ -58,12 +57,17 @@ export default function Four096Website() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="bg-white/90 backdrop-blur-sm rounded-full px-6 py-3">
-            <h1 className="text-lg font-bold text-gray-900">FOUR096.COM</h1>
+          <div className="bg-white/90 backdrop-blur-sm rounded-full px-6 py-2">
+            {/* <h1 className="text-lg font-bold text-gray-900">FOUR096.COM</h1> */}
+            <img
+            src="images/four096.png"
+            width={170}
+            height={20}
+            />
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-2 bg-white/90 backdrop-blur-sm rounded-full px-2 py-2">
+          <div className="hidden md:flex items-center space-x-2 bg-white/90 backdrop-blur-sm rounded-full px-2 py-2 border">
             {navItems.map((item) => (
               <button
                 key={item.id}
