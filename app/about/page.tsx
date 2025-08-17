@@ -42,7 +42,7 @@ const AboutPage = () => {
   }, [inView, controls])
   return (
     <ReactLenis root>
-      <div className="min-h-screen bg-[#eeede8]">
+      <div className="min-h-screen bg-[#eeede8] mb-10">
         <Navbar />
         {/* flex  items-center */}
         <Copy delay={0.5}>

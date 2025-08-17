@@ -1,184 +1,173 @@
-"use client"
-import type React from "react"
-import { useState, useEffect } from "react"
-import { Menu, X, Code, Users, Mail, Server, Cloud, Cpu, ArrowRight, Phone, MapPin } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { ReactLenis, useLenis } from "lenis/react";
-import Footer from "@/components/Footer"
-import Navbar from "@/components/Navbar"
+// 
 
-const ContactPage = () => {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-    })
+"use client";
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }))
-    }
+import Copy from "@/components/copy";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import ReactLenis from "lenis/react";
+import React, { useState } from "react";
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault()
-        // Note: Backend functionality for sending emails needs to be implemented separately
-        alert("Thank you for your message! We will get back to you soon.")
-        setFormData({ name: "", email: "", subject: "", message: "" })
-    }
-    return (
-            <ReactLenis root>
-      <Navbar/>
-        <div className="min-h-screen py-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">Contact Us</h1>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Ready to transform your business? Get in touch with our team of experts
-                    </p>
-                </div>
+// Next.js App Router page component
+// Place this file at: app/contact/page.tsx
+// Tailwind CSS is assumed. If you're not using Tailwind yet, run:
+//   npm i -D tailwindcss postcss autoprefixer
+//   npx tailwindcss init -p
+//   (and wire it up per Tailwind docs)
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    {/* Contact Information */}
-                    <div>
-                        <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-                            <h2 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h2>
+export default function Page() {
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    company: "",
+    jobTitle: "",
+    subject: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
 
-                            <div className="space-y-6">
-                                <div className="flex items-center">
-                                    <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                        <Mail className="h-6 w-6 text-blue-600" />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-gray-900">Email Address</h3>
-                                        <p className="text-gray-600">contact@Four096.com</p>
-                                    </div>
-                                </div>
+  function update<K extends keyof typeof form>(key: K, value: (typeof form)[K]) {
+    setForm((f) => ({ ...f, [key]: value }));
+  }
 
-                                <div className="flex items-center">
-                                    <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                        <Phone className="h-6 w-6 text-green-600" />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-gray-900">Response Time</h3>
-                                        <p className="text-gray-600">Within 24 hours</p>
-                                    </div>
-                                </div>
+  function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    // TODO: wire to your API route (e.g., /api/contact) or a service like Formspree
+    setSubmitted(true);
+  }
 
-                                <div className="flex items-center">
-                                    <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                        <MapPin className="h-6 w-6 text-purple-600" />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-gray-900">Consultation</h3>
-                                        <p className="text-gray-600">Free initial consultation</p>
-                                    </div>
-                                </div>
-                            </div>
+  return (
+    <ReactLenis root>
+      <main className="min-h-screen flex flex-col bg-white text-slate-900 ">
+        <Navbar />
+
+
+        {/* Hero */}
+        <section className="relative isolate sm:pt-32 md:pt-40 bg-gradient-to-b from-slate-50 to-white font-dm-sans ">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 ">
+            <Copy delay={0.5}>
+              <p className="text-2xl sm:text-3xl font-bold tracking-tight">Get in touch</p>
+              <h1 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold">Book a Demo</h1>
+              <p className="mt-4 max-w-2xl text-slate-600">
+                Let’s change the way you handle inventory management
+              </p>
+            </Copy>
+
+
+            <div className="mt-10 grid gap-10 lg:grid-cols-3 ">
+              {/* Left: Form + value props */}
+              <div className="lg:col-span-2">
+                <div className="grid gap-8 md:grid-cols-2 ">
+                  <form onSubmit={onSubmit} className="md:col-span-2 rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm bg-white">
+                    <div className="grid gap-4 md:grid-cols-2 ">
+                      <Copy delay={0.5}>
+                        <div>
+                          <label className="block text-sm font-medium">First Name<span className="text-rose-600">*</span></label>
+                          <input required value={form.firstName} onChange={(e) => update("firstName", e.target.value)} className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400" />
                         </div>
+                      </Copy>
+                      <Copy delay={0.5}>
+                         <div>
+                        <label className="block text-sm font-medium">Last Name<span className="text-rose-600">*</span></label>
+                        <input required value={form.lastName} onChange={(e) => update("lastName", e.target.value)} className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400" />
+                      </div>
+                      </Copy>
+                     
+                      <Copy delay={0.5}>
+                                             <div>
+                        <label className="block text-sm font-medium">Email<span className="text-rose-600">*</span></label>
+                        <input type="email" required value={form.email} onChange={(e) => update("email", e.target.value)} className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400" />
+                      </div>
+                      </Copy>
+ 
+                      <Copy delay={0.5}>
+                                              <div>
+                        <label className="block text-sm font-medium">Phone</label>
+                        <input value={form.phone} onChange={(e) => update("phone", e.target.value)} className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400" />
+                      </div>
+                      </Copy>
 
-                        {/* Contact Image */}
-                        <div className="hidden lg:block">
-                            <img
-                                src="/placeholder.svg?height=300&width=400"
-                                alt="Contact us"
-                                className="rounded-2xl shadow-lg w-full"
-                            />
-                        </div>
+                      <Copy delay={0.5}>
+                                           <div>
+                        <label className="block text-sm font-medium">Company Name<span className="text-rose-600">*</span></label>
+                        <input required value={form.company} onChange={(e) => update("company", e.target.value)} className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400" />
+                      </div>
+                      </Copy>
+   
+                      <Copy delay={0.5}>
+                         <div>
+                        <label className="block text-sm font-medium">Job Title</label>
+                        <input value={form.jobTitle} onChange={(e) => update("jobTitle", e.target.value)} className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400" />
+                      </div>
+                      </Copy>
+                     
+                      <Copy delay={0.5}>
+                                              <div className="md:col-span-2">
+                        <label className="block text-sm font-medium">Subject<span className="text-rose-600">*</span></label>
+                        <select required value={form.subject} onChange={(e) => update("subject", e.target.value)} className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400 bg-white">
+                          <option value="">Please select...</option>
+                          <option>General Enquiry</option>
+                          <option>Career Opportunities</option>
+                          <option>Technical Support</option>
+                          <option>Partnership Opportunities</option>
+                          <option>Press & Media</option>
+                          <option>Other</option>
+                        </select>
+                      </div>
+                      </Copy>
+
+                      <Copy delay={0.5}>
+                          <div className="md:col-span-2">
+                        <label className="block text-sm font-medium">Message<span className="text-rose-600">*</span></label>
+                        <textarea required value={form.message} onChange={(e) => update("message", e.target.value)} rows={6} className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400" />
+                      </div>
+                      </Copy>
+                    
+                     
                     </div>
-
-                    {/* Contact Form */}
-                    <div className="bg-white rounded-2xl shadow-lg p-8">
-                        <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
-
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                                    Name *
-                                </label>
-                                <Input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleInputChange}
-                                    required
-                                    className="w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                                    placeholder="Your full name"
-                                />
-                            </div>
-
-                            <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                                    Email *
-                                </label>
-                                <Input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleInputChange}
-                                    required
-                                    className="w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                                    placeholder="your.email@example.com"
-                                />
-                            </div>
-
-                            <div>
-                                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                                    Subject *
-                                </label>
-                                <Input
-                                    type="text"
-                                    id="subject"
-                                    name="subject"
-                                    value={formData.subject}
-                                    onChange={handleInputChange}
-                                    required
-                                    className="w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                                    placeholder="What can we help you with?"
-                                />
-                            </div>
-
-                            <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                                    Message *
-                                </label>
-                                <Textarea
-                                    id="message"
-                                    name="message"
-                                    value={formData.message}
-                                    onChange={handleInputChange}
-                                    required
-                                    rows={6}
-                                    className="w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                                    placeholder="Tell us about your project or requirements..."
-                                />
-                            </div>
-
-                            <Button
-                                type="submit"
-                                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg text-lg font-semibold transition-colors duration-200"
-                            >
-                                Send Message
-                            </Button>
-                        </form>
-
-                        <p className="text-sm text-gray-500 mt-4">
-                            * Note: Backend functionality for sending emails will need to be implemented separately.
-                        </p>
+               
+                    <Copy delay={0.5}>
+                           <div className="mt-6 flex items-center justify-between gap-4">
+                      <p className="text-xs text-slate-500">By submitting, you agree to our Terms & Privacy.</p>
+                      <button type="submit" className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-white font-medium hover:bg-slate-800">
+                        Book a Demo
+                      </button>
                     </div>
+                      </Copy>
+                    {submitted && (
+                      <p className="mt-4 text-sm text-emerald-600">Thanks! We received your message and will get back to you shortly.</p>
+                    )}
+                  </form>
+
+                  {/* Value props */}
+                  <div className="rounded-2xl border border-slate-200 p-6 shadow-sm bg-white">
+                    <h3 className="text-base font-semibold">Talk to an expert at WA Solutions to see how our innovative IMS software will help you</h3>
+                    <ul className="mt-4 space-y-3 text-sm text-slate-700">
+                      <li className="flex gap-3"><span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-slate-900" aria-hidden /> Reduce costs and streamline processes</li>
+                      <li className="flex gap-3"><span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-slate-900" aria-hidden /> Adapt and scale with agility</li>
+                      <li className="flex gap-3"><span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-slate-900" aria-hidden /> Make data-driven decisions</li>
+                    </ul>
+                  </div>
                 </div>
+              </div>
+
+              {/* Right: CTA card */}
+              <aside className="lg:col-span-1">
+                <div className="sticky top-24 rounded-2xl border border-slate-200 p-6 shadow-sm bg-white">
+                  <p className="text-sm uppercase tracking-wider text-slate-500">Chat with an inventory expert</p>
+                  <p className="mt-2 text-slate-700">Transform your inventory distribution process with innovative IMS software.</p>
+                  <a href="#contact-form" className="mt-6 inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-white font-medium hover:bg-slate-800">Book a Demo</a>
+                </div>
+              </aside>
             </div>
-        </div>
-        <Footer/>
-        </ReactLenis>
-    )
-}
+          </div>
+        </section>
 
-export default ContactPage
+        {/* Footer */}
+        <Footer/>
+      </main>
+    </ReactLenis>
+  );
+}
