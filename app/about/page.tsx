@@ -45,17 +45,17 @@ const AboutPage = () => {
   }, [inView, controls])
   return (
     <ReactLenis root>
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50 text-slate-800">
+      <main className="min-h-screen  bg-gradient-to-br from-slate-50 via-white to-indigo-50 text-slate-800 ">
         <Navbar />
 
         {/* Hero */}
-        <header className="relative">
+        <header className="relative  ">
           <div className="absolute inset-0 pointer-events-none">
-            <div className="h-72 w-72 md:h-96 md:w-96 rounded-full blur-3xl opacity-40 bg-gradient-to-tr from-indigo-300 via-sky-200 to-emerald-200 absolute -top-16 -left-10" />
+            <div className="h-72 w-72 md:h-96 md:w-96 rounded-full blur-3xl opacity-40 bg-gradient-to-tr from-indigo-300 via-sky-200 to-emerald-200 absolute right-0 " />
           </div>
-          <div className="absolute inset-0 pointer-events-none">
+          <div className=" inset-0 pointer-events-none">
             {/* Decorative gradient blob */}
-            <div className="h-64 w-64 md:h-96 md:w-96 rounded-full blur-3xl opacity-40 bg-gradient-to-tr from-indigo-300 via-sky-200 to-emerald-200 absolute -top-16 -right-10" />
+            <div className="h-64 w-64 md:h-96 md:w-96 rounded-full blur-3xl opacity-40 bg-gradient-to-tr from-indigo-300 via-sky-200 to-emerald-200 absolute top-0" />
           </div>
           <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-28 font-dm-sans">
             <p className="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full bg-white/70 backdrop-blur ring-1 ring-slate-200 shadow-sm">
@@ -219,7 +219,7 @@ const AboutPage = () => {
           </Copy>
         </section>
         <Footer />
-      </div>
+      </main>
     </ReactLenis>
   )
 }

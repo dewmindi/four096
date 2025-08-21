@@ -45,7 +45,7 @@ export default function Page() {
 
 
         {/* Hero */}
-        <section className="relative isolate sm:pt-32 md:pt-40 bg-gradient-to-b from-slate-50 to-white font-dm-sans ">
+        <section className="relative isolate pt-32 md:pt-40 bg-gradient-to-b from-slate-50 to-white font-dm-sans ">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 ">
             <Copy delay={0.5}>
               <p className="text-2xl sm:text-3xl font-bold tracking-tight">Get in touch</p>

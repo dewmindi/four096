@@ -13,6 +13,7 @@ const Navbar = () => {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
+
   ]
 
   return (
@@ -61,7 +62,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden ">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="bg-white/90 backdrop-blur-sm rounded-full p-3 text-gray-700 hover:tebg-cyan-600"
