@@ -33,7 +33,7 @@ const Footer = () => {
     setMobileMenuOpen(false)
   }
   return (
-    <footer className="bg-[#1a1c2d] text-white py-12 px-6 lg:px-20  rounded-3xl m-10 font-dm-sans bg-cover ">
+    <footer className="bg-[#1a1c2d] text-white py-12 px-6 lg:px-20  m-0 md:m-10 rounded-none md:rounded-2xl   font-dm-sans bg-cover ">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
         {/* Left Section: Chat with an inventory expert */}
         <div className="col-span-1 md:col-span-1 lg:col-span-2 flex flex-col justify-between ">
@@ -46,7 +46,7 @@ const Footer = () => {
             </p>
             <a
               href="#"
-              className="bg-cyan-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg inline-flex items-center group transition duration-300 ease-in-out mb-6"
+              className="bg-cyan-600 hover:bg-black text-white font-medium py-3 px-6 rounded-lg inline-flex items-center group transition duration-300 ease-in-out mb-6"
             >
               Book a Consultation
               <svg
@@ -113,12 +113,21 @@ const Footer = () => {
                 YouTube
               </a>
             </li>
+                        <li>
+              <a href="#" className="text-gray-400 hover:text-white transition duration-200 inline-flex items-center">
+                {/* YouTube Icon - Replace with actual SVG or component */}
+                <svg className="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.155.215-4.49 3.514-4.49 7.816 0 4.302 1.335 7.601 4.49 7.816 3.6.245 11.626.246 15.23 0 3.155-.215 4.49-3.515 4.49-7.816s-1.335-7.601-4.49-7.816zm-5.615 8.816l-4.5 2.5v-5l4.5 2.5z"></path>
+                </svg>
+                Email
+              </a>
+            </li>
           </ul>
         </div>
       </div>
 
       {/* Copyright and Legal Links */}
-      <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+      <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-white text-sm">
         <span>Copyright © Four096  {new Date().getFullYear()} </span>
         <div className="flex space-x-4 mt-4 md:mt-0">
           <a

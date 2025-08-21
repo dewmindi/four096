@@ -13,7 +13,7 @@ export default function Four096Website() {
 
   return (
     <ReactLenis root>
-      <div className="min-h-screen bg-[#eeede8] font-sans">
+      <div className="min-h-screen bg-white font-sans">
         <Navbar/>
         <Homepage/>
         <Footer />
