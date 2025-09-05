@@ -17,7 +17,7 @@ export default function Expertise() {
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
                 Who We Are
               </h2>
-              <p>
+              <p className="text-lg">
                                   We are a consulting service with professionals with over two
                   decades of experience in <span className="font-semibold text-gray-900">Software Development, Integration
                   and Consulting</span> specializing in business software.  
@@ -29,7 +29,7 @@ export default function Expertise() {
               </p>
 
               {/* Stats / Highlights */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
+              {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="flex flex-col items-center bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-md ring-1 ring-slate-200"
@@ -56,7 +56,7 @@ export default function Expertise() {
                   <h4 className="text-2xl font-bold text-slate-900">100+</h4>
                   <p className="text-sm text-slate-500">Projects Delivered</p>
                 </motion.div>
-              </div>
+              </div> */}
             </div>
                         {/* Image */}
             <div className="md:col-span-6 relative h-80 sm:h-[26rem] md:h-[32rem] rounded-3xl overflow-hidden shadow-xl group">

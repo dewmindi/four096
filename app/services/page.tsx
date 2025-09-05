@@ -386,29 +386,29 @@ const sections: Section[] = [
       // "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
       "/images/service2.jpg",
     subservices: [
-      "IFS Cloud Implementation",
-      "Custom Modifications",
-      "Platform Integration",
-      "Business Process Optimization",
+      // "IFS Cloud Implementation",
+      // "Custom Modifications",
+      // "Platform Integration",
+      // "Business Process Optimization",
     ],
     cta: "Learn More",
   },
-  {
-    title: "Modern & Minimal",
-    highlight: "Web Experiences",
-    description:
-      "Ship fast, beautiful, and responsive websites with a scalable Next.js architecture, component-driven UI, and accessible design. Built for performance and easy iteration.",
-    image:
-      // "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
-      "/images/service1.jpg",
-    subservices: [
-      "IFS Cloud Implementation",
-      "Custom Modifications",
-      "Platform Integration",
-      "Business Process Optimization",
-    ],
-    cta: "Learn More",
-  },
+  // {
+  //   title: "Modern & Minimal",
+  //   highlight: "Web Experiences",
+  //   description:
+  //     "Ship fast, beautiful, and responsive websites with a scalable Next.js architecture, component-driven UI, and accessible design. Built for performance and easy iteration.",
+  //   image:
+  //     // "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+  //     "/images/service1.jpg",
+  //   subservices: [
+  //     "IFS Cloud Implementation",
+  //     "Custom Modifications",
+  //     "Platform Integration",
+  //     "Business Process Optimization",
+  //   ],
+  //   cta: "Learn More",
+  // },
   {
     title: "Scalable",
     highlight: "Cloud Solutions",
@@ -416,30 +416,30 @@ const sections: Section[] = [
       "Leverage AWS, containerized workloads, CI/CD, and observability to keep your apps resilient, secure, and cost-efficient as you grow.",
     image:
       // "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-      "/images/service2.jpg",
+      "/images/four0964.jpeg",
     subservices: [
-      "IFS Cloud Implementation",
-      "Custom Modifications",
-      "Platform Integration",
-      "Business Process Optimization",
+      // "IFS Cloud Implementation",
+      // "Custom Modifications",
+      // "Platform Integration",
+      // "Business Process Optimization",
     ],
     cta: "Get Started",
   },
-  {
-    title: "Product-Led",
-    highlight: "Growth & Analytics",
-    description:
-      "Turn insights into action with clean data pipelines, event tracking, and dashboards that give your team clarity without the noise.",
-    image:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a",
-    subservices: [
-      "IFS Cloud Implementation",
-      "Custom Modifications",
-      "Platform Integration",
-      "Business Process Optimization",
-    ],
-    cta: "See How",
-  },
+  // {
+  //   title: "Product-Led",
+  //   highlight: "Growth & Analytics",
+  //   description:
+  //     "Turn insights into action with clean data pipelines, event tracking, and dashboards that give your team clarity without the noise.",
+  //   image:
+  //     "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a",
+  //   subservices: [
+  //     "IFS Cloud Implementation",
+  //     "Custom Modifications",
+  //     "Platform Integration",
+  //     "Business Process Optimization",
+  //   ],
+  //   cta: "See How",
+  // },
 ]
 
 export default function ServicePage() {

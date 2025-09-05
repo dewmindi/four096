@@ -108,11 +108,11 @@ const AboutPage = () => {
 
             {/* Text */}
             <div className="md:col-span-6 flex flex-col space-y-6 font-dm-sans">
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
-                Who We Are
+              <h2 className="text-4xl md:text-5xl font-bold text-cyan-600 leading-tight">
+                Four096
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
-                At <span className="font-semibold text-cyan-600">Four096</span>, we
+                we
                 are a team of innovators, engineers, and creators passionate about
                 delivering next-generation digital solutions. Our mission is to help
                 businesses embrace change, harness new technologies, and create
@@ -120,7 +120,7 @@ const AboutPage = () => {
               </p>
 
               {/* Stats / Highlights */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
+              {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="flex flex-col items-center bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-md ring-1 ring-slate-200"
@@ -147,7 +147,7 @@ const AboutPage = () => {
                   <h4 className="text-2xl font-bold text-slate-900">100+</h4>
                   <p className="text-sm text-slate-500">Projects Delivered</p>
                 </motion.div>
-              </div>
+              </div> */}
             </div>
           </motion.section>
         </main>
