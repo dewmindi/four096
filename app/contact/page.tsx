@@ -21,8 +21,6 @@ export default function Page() {
     lastName: "",
     email: "",
     phone: "",
-    company: "",
-    jobTitle: "",
     subject: "",
     message: "",
   });
@@ -32,11 +30,40 @@ export default function Page() {
     setForm((f) => ({ ...f, [key]: value }));
   }
 
-  function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    // TODO: wire to your API route (e.g., /api/contact) or a service like Formspree
-    setSubmitted(true);
+  // function onSubmit(e: React.FormEvent) {
+  //   e.preventDefault();
+  //   // TODO: wire to your API route (e.g., /api/contact) or a service like Formspree
+  //   setSubmitted(true);
+  // }
+  async function onSubmit(e: React.FormEvent) {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      setSubmitted(true);
+      setForm({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    } else {
+      alert("Failed to send email: " + data.error);
+    }
+  } catch (err: any) {
+    alert("Error sending email: " + err.message);
   }
+}
 
   return (
     <ReactLenis root>
@@ -83,24 +110,16 @@ export default function Page() {
                       </Copy>
  
                       <Copy delay={0.5}>
-                                              <div>
+                      <div>
                         <label className="block text-sm font-medium">Phone</label>
                         <input value={form.phone} onChange={(e) => update("phone", e.target.value)} className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400" />
                       </div>
                       </Copy>
                      
                       <Copy delay={0.5}>
-                                              <div className="md:col-span-2">
+                        <div className="md:col-span-2">
                         <label className="block text-sm font-medium">Subject<span className="text-rose-600">*</span></label>
-                        <select required value={form.subject} onChange={(e) => update("subject", e.target.value)} className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400 bg-white">
-                          <option value="">Please select...</option>
-                          <option>General Enquiry</option>
-                          <option>Career Opportunities</option>
-                          <option>Technical Support</option>
-                          <option>Partnership Opportunities</option>
-                          <option>Press & Media</option>
-                          <option>Other</option>
-                        </select>
+                        <input value={form.subject} onChange={(e) => update("subject", e.target.value)} className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400" />
                       </div>
                       </Copy>
 
