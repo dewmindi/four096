@@ -8,13 +8,6 @@ import Navbar from "@/components/Navbar";
 import ReactLenis from "lenis/react";
 import React, { useState } from "react";
 
-// Next.js App Router page component
-// Place this file at: app/contact/page.tsx
-// Tailwind CSS is assumed. If you're not using Tailwind yet, run:
-//   npm i -D tailwindcss postcss autoprefixer
-//   npx tailwindcss init -p
-//   (and wire it up per Tailwind docs)
-
 export default function Page() {
   const [form, setForm] = useState({
     firstName: "",
@@ -78,7 +71,7 @@ export default function Page() {
               <p className="text-2xl sm:text-3xl font-bold tracking-tight">Get in touch</p>
               <h1 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold">Book a Consultation</h1>
               <p className="mt-4 max-w-2xl text-slate-600">
-                Let’s build smarter solutions that drive real results.
+                Let's build smarter solutions that drive real results.
               </p>
             </Copy>
 

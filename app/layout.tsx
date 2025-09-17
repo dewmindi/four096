@@ -28,7 +28,6 @@ html {
         `}</style>
       </head>
       <body>
-        <CustomCursor />
         {children}
         </body>
     </html>

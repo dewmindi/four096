@@ -1,42 +1,46 @@
+// /app/api/contact/route.js
 import nodemailer from "nodemailer";
-import { NextResponse } from "next/server";
 
-export async function POST(req: Request) {
+export async function POST(req) {
   try {
     const data = await req.json();
     const { firstName, lastName, email, phone, subject, message } = data;
 
-    // Configure SMTP transporter
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
-      secure: process.env.SMTP_SECURE === "true",
+      secure: true,
       auth: {
-        user: process.env.SMTP_USER,  // replace with your email
-        pass: process.env.SMTP_PASS,     // replace with your SMTP password
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,  
       },
     });
 
-    // Email content
-    const mailOptions = {
-      // from: `"${firstName} ${lastName}" <${email}>`,
-      from: process.env.EMAIL_FROM,
-      to: process.env.SMTP_USER, // destination email
+    await transporter.sendMail({
+      from: process.env.SMTP_USER,
+      to: process.env.EMAIL_TO,
       subject: `New Contact Form from Four096: ${subject}`,
-      replyTo: email,
       html: `
         <p><strong>Name:</strong> ${firstName} ${lastName}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone}</p>
         <p><strong>Message:</strong><br>${message}</p>
       `,
-    };
+    });
 
-    await transporter.sendMail(mailOptions);
+    return new Response(JSON.stringify({ success: true, message: "Email sent successfully" }), { status: 200 });
+} catch (error) {
+  console.error("Email sending error:", error);
+  return new Response(
+    JSON.stringify({
+      error: "Failed to send email",
+      details: String(error),    
+      raw: JSON.stringify(error, Object.getOwnPropertyNames(error))
+    }),
+    { status: 500, headers: { "Content-Type": "application/json" } }
+  );
+}
 
-    return NextResponse.json({ success: true });
-  } catch (err: any) {
-    console.error(err);
-    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
-  }
+
+
 }

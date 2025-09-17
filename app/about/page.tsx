@@ -58,10 +58,10 @@ const AboutPage = () => {
             <div className="h-64 w-64 md:h-96 md:w-96 rounded-full blur-3xl opacity-40 bg-gradient-to-tr from-indigo-300 via-sky-200 to-emerald-200 absolute top-0" />
           </div>
           <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-28 font-dm-sans">
-            <p className="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full bg-white/70 backdrop-blur ring-1 ring-slate-200 shadow-sm">
+            {/* <p className="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full bg-white/70 backdrop-blur ring-1 ring-slate-200 shadow-sm">
               <span className="h-2 w-2 rounded-full bg-emerald-500" />
               Who We are
-            </p>
+            </p> */}
             <Copy delay={0.25}>
               <h1 className="mt-6 text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-slate-900">
                 About{" "}
@@ -69,9 +69,9 @@ const AboutPage = () => {
                   Four096
                 </span>
               </h1>
-              <p className="mt-6 max-w-2xl text-lg md:text-xl text-slate-600">
+              {/* <p className="mt-6 max-w-2xl text-lg md:text-xl text-slate-600">
                 Your trusted partner in digital transformation and business innovation
-              </p>
+              </p> */}
             </Copy>
           </div>
         </header>
@@ -112,7 +112,7 @@ const AboutPage = () => {
                 Four096
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
-                we
+                <span className="text-xl">W</span>e
                 are a team of innovators, engineers, and creators passionate about
                 delivering next-generation digital solutions. Our mission is to help
                 businesses embrace change, harness new technologies, and create
